@@ -1,0 +1,11 @@
+<table class="table table-hover">
+    <tr *ngFor="let property of service.list | paginate: {itemsPerPage: 5, currentPage: pageActual}">
+        <td>{{property.Address}}</td>
+        <td>{{property.City}}</td>
+        <td>{{property.Country}}</td>
+        <td>{{property.PostalCode}}</td>
+        <td><button (click)="onDelete(property.PropertyID)" class="btn btn-sm btn-outline-danger">X</button></td>
+        <td><button (click)="onEdit(property)" class="btn btn-sm btn-outline-info">Edit</button></td>
+    </tr>
+</table>
+<pagination-controls (pageChange)="pageActual = $event"></pagination-controls>

@@ -1,0 +1,50 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden" name="OwnerID" #OwnerID="ngModel" [(ngModel)]="service.formData.OwnerID">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label> NAME </label>
+            <input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name" class="form-control" required>
+            <div class="validation-error" *ngIf="Name.invalid && Name.touched">This field is required.</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label> SURNAME </label>
+            <input name="Surname" #Surname="ngModel" [(ngModel)]="service.formData.Surname" class="form-control">
+            <div class="validation-error" *ngIf="Surname.invalid && Surname.touched">This field is required.</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label> BIRTHDAY </label>
+            <input name="BirthDate" #BirthDate="ngModel" [(ngModel)]="service.formData.BirthDate" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label> Telephone </label>
+            <input name="Telephone" #Telephone="ngModel" [(ngModel)]="service.formData.Telephone" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label> ADDRESS </label>
+        <input name="Address" #Address="ngModel" [(ngModel)]="service.formData.Address" class="form-control">
+        <div class="validation-error" *ngIf="Address.invalid && Address.touched">This field is required.</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label> City </label>
+            <input name="City" #City="ngModel" [(ngModel)]="service.formData.City" class="form-control">
+            <div class="validation-error" *ngIf="City.invalid && City.touched">This field is required.</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label> Country </label>
+            <input name="Country" #Country="ngModel" [(ngModel)]="service.formData.Country" class="form-control">
+            <div class="validation-error" *ngIf="Country.invalid && Country.touched">This field is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label> Postal Code </label>
+        <input name="PostalCode" #PostalCode="ngModel" [(ngModel)]="service.formData.PostalCode" class="form-control">
+        <div class="validation-error" *ngIf="PostalCode.invalid && PostalCode.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+</form>
